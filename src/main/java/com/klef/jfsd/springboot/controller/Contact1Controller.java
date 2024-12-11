@@ -8,7 +8,7 @@ import com.klef.jfsd.springboot.model.Contact1;
 import com.klef.jfsd.springboot.services.Contact1Service;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping("/faculty-contact")
 public class Contact1Controller {
 
