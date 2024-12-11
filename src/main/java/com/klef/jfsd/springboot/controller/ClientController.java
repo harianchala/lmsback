@@ -16,7 +16,7 @@ import com.klef.jfsd.springboot.services.UserService;
 
 @RestController
 @RequestMapping("/lms1")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*",allowedMethods = {"GET", "POST", "PUT", "DELETE", "OPTIONS"})
 public class ClientController 
 {
 	@Autowired
