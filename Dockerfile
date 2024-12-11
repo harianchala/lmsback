@@ -1,14 +1,5 @@
-# Use an official Maven image to build the project
-FROM maven:3.9.4-eclipse-temurin-17 as builder
-
-# Set the working directory
-WORKDIR /app
-
-# Copy the project files
-COPY . .
-
-# Build the WAR file
-RUN mvn clean package -DskipTests
+# Build the WAR file and specify the output directory
+RUN mvn clean package -DskipTests -Dmaven.war.outputDirectory=/app/target
 
 # Use a lightweight Tomcat image
 FROM tomcat:10.1-jdk17
@@ -17,7 +8,7 @@ FROM tomcat:10.1-jdk17
 WORKDIR /usr/local/tomcat/webapps
 
 # Copy the generated WAR file to Tomcat's webapps directory
-COPY --from=builder /app/target/JFSDProject.war ./
+COPY --from=builder /app/target/*.war ./JFSDProject.war
 
 # Expose the default Tomcat port
 EXPOSE 8080
