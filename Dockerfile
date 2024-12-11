@@ -7,8 +7,11 @@ WORKDIR /app
 # Copy the project files
 COPY . .
 
-# Force Maven to build the WAR file
-RUN mvn clean package -DskipTests
+# Force Maven to build the WAR file (without skipping tests for debugging)
+RUN mvn clean package
+
+# Check if the WAR file is generated
+RUN ls /app/target
 
 # Use a lightweight Tomcat image
 FROM tomcat:10.1-jdk17
