@@ -27,7 +27,7 @@ import com.klef.jfsd.springboot.services.AdminService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // Adjust origin as per your frontend host
+@CrossOrigin(origins = "*") // Adjust origin as per your frontend host
 @RequestMapping("/api/admin")
 public class AdminController {
 	@Autowired
