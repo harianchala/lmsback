@@ -18,7 +18,7 @@ import com.klef.jfsd.springboot.model.Student;
 import com.klef.jfsd.springboot.services.FacultyService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // Adjust origin as per your frontend host
+@CrossOrigin(origins = "*") // Adjust origin as per your frontend host
 @RequestMapping("/api/faculty")
 public class FacultyController {
 	@Autowired
