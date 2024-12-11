@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy the project files
 COPY . .
 
-# Check if the WAR file exists, otherwise build it
-RUN if [ ! -f target/JFSDProject.war ]; then mvn clean package -DskipTests; fi
+# Force Maven to build the WAR file
+RUN mvn clean package -DskipTests
 
 # Use a lightweight Tomcat image
 FROM tomcat:10.1-jdk17
@@ -17,7 +17,7 @@ FROM tomcat:10.1-jdk17
 WORKDIR /usr/local/tomcat/webapps
 
 # Copy the generated WAR file to Tomcat's webapps directory
-COPY --from=builder /app/target/JFSDProject.war ./
+COPY --from=builder /app/target/*.war ./JFSDProject.war
 
 # Expose the default Tomcat port
 EXPOSE 8080
