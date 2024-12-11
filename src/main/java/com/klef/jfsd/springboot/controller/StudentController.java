@@ -8,7 +8,7 @@ import com.klef.jfsd.springboot.services.StudentService;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // Adjust origin as per your frontend host
+@CrossOrigin(origins = "*") // Adjust origin as per your frontend host
 @RequestMapping("/api/students")
 public class StudentController {
 
