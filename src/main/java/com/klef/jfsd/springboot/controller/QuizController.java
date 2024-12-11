@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/quiz")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", , allowedMethods = {"GET", "POST", "PUT", "DELETE", "OPTIONS"})
 public class QuizController {
 
     private final QuizService service;
