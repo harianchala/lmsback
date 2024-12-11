@@ -11,7 +11,7 @@
 	<groupId>com.klef.jfsd.springboot</groupId>
 	<artifactId>JFSDProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>JFSDProject</name>
 	<description>Spring Boot with MVC and JPA Project Demo</description>
 	<url/>
