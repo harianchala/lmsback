@@ -16,7 +16,7 @@ import com.klef.jfsd.springboot.model.Course;
 import com.klef.jfsd.springboot.services.CourseService;
 
 @RestController
-@CrossOrigin(origins = "*",allowedMethods = {"GET", "POST", "PUT", "DELETE", "OPTIONS"}) // Adjust origin as per your frontend host
+@CrossOrigin(origins = "*") // Adjust origin as per your frontend host
 @RequestMapping("/api/course")
 public class CourseController {
 	@Autowired
